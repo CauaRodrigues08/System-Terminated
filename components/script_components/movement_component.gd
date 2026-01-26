@@ -7,8 +7,9 @@ class_name MovementComponent
 @export var acceleration := 2000.0
 @export var friction := 2000.0
 
-@export var controller : Node
-@onready var body := owner as CharacterBody2D
+@export var controller : Node ## The controller is where the intent to move comes from. 
+## All controllers MUST HAVE a get_movement_vector() function. If it doesn't, the code fallsback to zero movement.
+@onready var body := owner as CharacterBody2D ## The node that will actually be moving.
 
 func _ready():
 	assert(body, "MovementComponent must be owned by a CharacterBody2D")
@@ -21,6 +22,7 @@ func _physics_process(delta: float) -> void:
 	var target_velocity := movement_input * speed
 	
 	if movement_input != Vector2.ZERO:
+		## Although lerp could be used, move_toward seems to function better.
 		body.velocity = body.velocity.move_toward(
 			target_velocity,
 			acceleration * delta
@@ -31,7 +33,7 @@ func _physics_process(delta: float) -> void:
 			friction * delta
 		)
 		
-	_apply_velocity_cleanup()
+	_apply_velocity_cleanup() ## Prevents jittering and micro movements.
 	body.move_and_slide()
 
 func _apply_velocity_cleanup():
