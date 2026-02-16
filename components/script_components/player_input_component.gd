@@ -1,4 +1,4 @@
-extends Node
+extends MovementController
 class_name PlayerInputComponent
 
 func get_movement_vector() -> Vector2:

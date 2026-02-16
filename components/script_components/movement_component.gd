@@ -1,5 +1,3 @@
-## A fazer: Fazer o controller ser definido não só no editor, como no código também. Provavelmente vou fazer um  palyer.gd para isso..
-
 extends Node
 class_name MovementComponent
 
@@ -7,12 +5,11 @@ class_name MovementComponent
 @export var acceleration := 2000.0
 @export var friction := 2000.0
 
-@export var controller : Node ## The controller is where the intent to move comes from. 
-## All controllers MUST HAVE a get_movement_vector() function. If it doesn't, the code fallsback to zero movement.
+@export var controller : MovementController ## The controller is where the intent to move comes from. 
 @onready var body := owner as CharacterBody2D ## The node that will actually be moving.
 
 func _ready():
-	assert(body, "MovementComponent must be owned by a CharacterBody2D")
+	assert(body, "MovementComponent must be owned by a CharacterBody2D or body does not exist")
 
 func _physics_process(delta: float) -> void:
 	if not body:
@@ -43,8 +40,6 @@ func _apply_velocity_cleanup():
 func _get_movement_input() -> Vector2:
 	if not controller:
 		print("No controller")
-	elif not controller.has_method("get_movement_vector"):
-		print("Controller missing get_movement_vector")
 	else:
 		return controller.get_movement_vector()
 	return Vector2.ZERO
