@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cec130g2omaik"]
+
+[ext_resource type="Script" uid="uid://b0p8fbfbquahy" path="res://components/script_components/gun_pivot.gd" id="1_kr0ri"]
+
+[node name="GunPivot" type="Node2D"]
+script = ExtResource("1_kr0ri")

@@ -1,9 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://yeyjuwgd3asb"]
+[gd_scene load_steps=10 format=3 uid="uid://yeyjuwgd3asb"]
 
 [ext_resource type="Texture2D" uid="uid://db548hqtx83jx" path="res://assets/icon.svg" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://bnbdid06xwdmi" path="res://scripts/player.gd" id="1_dqkch"]
 [ext_resource type="PackedScene" uid="uid://bpljtv82sdkyo" path="res://components/scenes_components/player_input_component.tscn" id="3_dqkch"]
 [ext_resource type="PackedScene" uid="uid://c4yfhwh1f6aa6" path="res://components/scenes_components/movement_component.tscn" id="4_dqkch"]
+[ext_resource type="PackedScene" uid="uid://88m5eyuqyqtd" path="res://components/scenes_components/player_aim_input.tscn" id="5_tuyoq"]
+[ext_resource type="PackedScene" uid="uid://bkf44vtjnbfie" path="res://components/scenes_components/aim_component.tscn" id="6_fjrip"]
+[ext_resource type="PackedScene" uid="uid://cec130g2omaik" path="res://components/scenes_components/gun_pivot.tscn" id="7_fjrip"]
+[ext_resource type="Texture2D" uid="uid://bv0tv516xiioo" path="res://assets/sprites/hand-cursor.png" id="8_smehm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3vyb7"]
 size = Vector2(58, 58)
@@ -23,3 +27,12 @@ texture = ExtResource("1_3vyb7")
 [node name="MovementComponent" parent="." instance=ExtResource("4_dqkch")]
 
 [node name="PlayerInputComponent" parent="." instance=ExtResource("3_dqkch")]
+
+[node name="PlayerAimInput" parent="." instance=ExtResource("5_tuyoq")]
+
+[node name="AimComponent" parent="." instance=ExtResource("6_fjrip")]
+
+[node name="GunPivot" parent="." instance=ExtResource("7_fjrip")]
+
+[node name="GunSprite" type="Sprite2D" parent="GunPivot"]
+texture = ExtResource("8_smehm")

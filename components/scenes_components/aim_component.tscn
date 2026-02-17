@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkf44vtjnbfie"]
+
+[ext_resource type="Script" uid="uid://ckwj77rtvfbtb" path="res://components/script_components/aim_component.gd" id="1_h7c3k"]
+
+[node name="AimComponent" type="Node"]
+script = ExtResource("1_h7c3k")
