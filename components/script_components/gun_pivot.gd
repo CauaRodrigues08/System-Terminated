@@ -16,7 +16,6 @@ func _process(_delta: float) -> void:
 	
 	rotation = direction.angle()
 	position = direction * radius
-	print(self.position)
 	
 	if direction.x > 0:
 		scale.y = 1
