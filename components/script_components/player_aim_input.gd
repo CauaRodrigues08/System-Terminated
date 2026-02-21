@@ -10,7 +10,6 @@ var last_mouse_position : Vector2
 
 func _ready() -> void:
 	last_mouse_position = get_mouse_position()
-	print(last_mouse_position)
 
 func get_raw_joystick_vector() -> Vector2:
 	return Vector2(

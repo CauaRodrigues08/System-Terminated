@@ -1,8 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://88m5eyuqyqtd"]
+[gd_scene format=3 uid="uid://88m5eyuqyqtd"]
 
 [ext_resource type="Script" uid="uid://dor6pwcgjos4a" path="res://components/script_components/player_aim_input.gd" id="1_ed0ly"]
 
-[node name="PlayerAimInput" type="Node"]
+[node name="PlayerAimInput" type="Node" unique_id=960344387]
 script = ExtResource("1_ed0ly")
-joystick_deadzone = null
-mouse_threshold = null
