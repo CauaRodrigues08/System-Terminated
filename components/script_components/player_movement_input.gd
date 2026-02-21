@@ -1,5 +1,5 @@
 extends MovementController
-class_name PlayerInputComponent
+class_name PlayerMovementInput
 
 func get_movement_vector() -> Vector2:
 	return Vector2(
