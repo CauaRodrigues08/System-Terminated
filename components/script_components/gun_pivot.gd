@@ -2,7 +2,8 @@ extends Node2D
 class_name GunPivot
 
 @export var aim_component : AimComponent
-@export var radius : float = 24.0
+@export var radius : float = 50.0
+
 
 func _process(_delta: float) -> void:
 	if aim_component == null:
@@ -15,6 +16,7 @@ func _process(_delta: float) -> void:
 	
 	rotation = direction.angle()
 	position = direction * radius
+	print(self.position)
 	
 	if direction.x > 0:
 		scale.y = 1

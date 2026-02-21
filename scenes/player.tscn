@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://yeyjuwgd3asb"]
+[gd_scene format=3 uid="uid://yeyjuwgd3asb"]
 
 [ext_resource type="Texture2D" uid="uid://db548hqtx83jx" path="res://assets/icon.svg" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://bnbdid06xwdmi" path="res://scripts/player.gd" id="1_dqkch"]
@@ -12,27 +12,31 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3vyb7"]
 size = Vector2(58, 58)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" unique_id=412805892]
 script = ExtResource("1_dqkch")
 
-[node name="HitBox" type="CollisionShape2D" parent="."]
+[node name="HitBox" type="CollisionShape2D" parent="." unique_id=955482454]
 shape = SubResource("RectangleShape2D_3vyb7")
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="." unique_id=957952559]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_3vyb7")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1856850223]
 
-[node name="MovementComponent" parent="." instance=ExtResource("4_dqkch")]
+[node name="MovementComponent" parent="." unique_id=214057671 instance=ExtResource("4_dqkch")]
 
-[node name="PlayerInputComponent" parent="." instance=ExtResource("3_dqkch")]
+[node name="PlayerInputComponent" parent="." unique_id=290747788 instance=ExtResource("3_dqkch")]
 
-[node name="PlayerAimInput" parent="." instance=ExtResource("5_tuyoq")]
+[node name="PlayerAimInput" parent="." unique_id=956704125 instance=ExtResource("5_tuyoq")]
+joystick_deadzone = 0.2
+mouse_threshold = 2.0
 
-[node name="AimComponent" parent="." instance=ExtResource("6_fjrip")]
+[node name="AimComponent" parent="." unique_id=1956975617 instance=ExtResource("6_fjrip")]
 
-[node name="GunPivot" parent="." instance=ExtResource("7_fjrip")]
+[node name="GunPivot" parent="." unique_id=83141518 instance=ExtResource("7_fjrip")]
 
-[node name="GunSprite" type="Sprite2D" parent="GunPivot"]
+[node name="GunSprite" type="Sprite2D" parent="GunPivot" unique_id=572503520]
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("8_smehm")

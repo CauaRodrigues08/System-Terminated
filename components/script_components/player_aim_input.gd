@@ -9,7 +9,8 @@ var last_used_device : Device = Device.MOUSE
 var last_mouse_position : Vector2
 
 func _ready() -> void:
-	last_mouse_position = get_viewport().get_camera_2d().get_global_mouse_position()
+	last_mouse_position = get_mouse_position()
+	print(last_mouse_position)
 
 func get_raw_joystick_vector() -> Vector2:
 	return Vector2(
@@ -19,16 +20,17 @@ func get_raw_joystick_vector() -> Vector2:
 
 func get_mouse_position() -> Vector2:
 	return get_viewport().get_camera_2d().get_global_mouse_position()
+	
 
 func update_last_device() -> void:
-	# joystick
+	## joystick
 	var joystick_vector = get_raw_joystick_vector()
 	
 	if joystick_vector.length() > joystick_deadzone:
 		last_used_device = Device.JOYSTICK
 		return
 	
-	# mouse
+	## mouse
 	var mouse_position = get_mouse_position()
 	if mouse_position.distance_to(last_mouse_position) > mouse_threshold:
 		last_used_device = Device.MOUSE
@@ -60,6 +62,7 @@ func get_aim_direction(origin: Vector2) -> Vector2:
 	match last_used_device:
 		Device.JOYSTICK:
 			return get_joystick_direction()
+			
 		Device.MOUSE:
 			return get_mouse_direction(origin, mouse_position)
 			
