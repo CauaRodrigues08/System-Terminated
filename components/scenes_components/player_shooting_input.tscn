@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dmcqrl7ioughh"]
+
+[ext_resource type="Script" uid="uid://d12itc8rpqf6h" path="res://components/script_components/player_shooting_input.gd" id="1_j2xfl"]
+
+[node name="PlayerShootingInput" type="Node" unique_id=96528580]
+script = ExtResource("1_j2xfl")
