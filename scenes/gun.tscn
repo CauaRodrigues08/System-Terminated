@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cuaxwy1sqpnlx"]
+
+[ext_resource type="Texture2D" uid="uid://bv0tv516xiioo" path="res://assets/sprites/hand-cursor.png" id="1_x77fm"]
+
+[node name="Gun" type="Node2D" unique_id=1083665899]
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=862331377]
+rotation = 1.5707964
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_x77fm")
